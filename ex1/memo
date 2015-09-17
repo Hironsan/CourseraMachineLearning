@@ -1,0 +1,26 @@
+学習データだけでなく、予測データも正規化しなければならない。
+
+行列を表示するときは、箱で書くとわかりやすいよ
+
+theta_0の意味。過学習を抑えるためにしよう。
+
+L_1, L_2正規化について調べる
+
+線形回帰の良いところ
+・計算が速い
+
+scikit learnのパイプラインをうまく使うと、正規化が簡単にできたりする。
+キーワード
+・「sklearn パイプライン」　便利
+preprocessing.standardscaler
+fit_transform
+
+
+numpyの使い方
+・data[:, col]で列を取れる
+・data[:, col1:col2]で複数列を取れる
+
+
+icoxfog417
+・scikit-learn-notebookが参考になる
+・ipynbが参考になる
