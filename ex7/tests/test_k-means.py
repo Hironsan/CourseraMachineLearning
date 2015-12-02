@@ -43,29 +43,7 @@ class TestKMeans(numpy.testing.TestCase):
         run_kmeans(self.X, centroids, max_iters, plot=True)
 
     def test_image_compression(self):
-        A = scipy.misc.imread("../bird_small.png")  # (128, 128, 3) dimension
-        pyplot.imshow(A)
-        pyplot.show(block=True)
+        compress_image('../bird_small.png')
 
-        A = A / 255.0
-        img_size = A.shape
-
-        X = A.reshape(img_size[0] * img_size[1], 3)
-        K = 16
-        max_iters = 10
-
-        initial_centroids = kmeans_init_centroids(X, K)
-        centroids, idx = run_kmeans(X, initial_centroids, max_iters)
-
-        # K色に変換
-        m = X.shape[0]
-        X_recovered = zeros(X.shape)
-
-        for i in range(m):
-            k = int(idx[i])
-            X_recovered[i] = centroids[k]
-
-        # 元の画像表現に戻す。3次元
-        X_recovered = X_recovered.reshape(img_size[0], img_size[1], 3)
-        pyplot.imshow(X_recovered)
-        pyplot.show(block=True)
+    def test_plot_image_by3d(self):
+        plot_image_compression('../bird_small.png')
