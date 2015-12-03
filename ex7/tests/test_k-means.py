@@ -3,8 +3,6 @@
 from numpy import *
 import numpy.testing
 import scipy.io
-import scipy.misc
-from matplotlib import pyplot
 
 from ex7.kmeans import *
 
@@ -19,7 +17,7 @@ class TestKMeans(numpy.testing.TestCase):
     def test_find_closest_centroids(self):
         initial_centroids = array([[3, 3], [6, 2], [8, 5]])
         idx = find_closest_centroids(self.X, initial_centroids)
-        ans = array([[0.], [2.], [1.]])
+        ans = array([0, 2, 1])
         numpy.testing.assert_array_equal(idx[0: 3], ans)
 
     def test_compute_centroids(self):

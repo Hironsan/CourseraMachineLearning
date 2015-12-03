@@ -102,6 +102,7 @@ def plot_image_compression(img_path=''):
     ax.plot(X[:, 0], X[:, 1], X[:, 2], 'o', color="red", ms=4, mew=0.5)
     pyplot.show(block=True)
 
+
 def run_kmeans1(X, initial_centroids, max_iters, plot=False):
     K = initial_centroids.shape[0]
     centroids = copy(initial_centroids)
@@ -122,7 +123,7 @@ def run_kmeans1(X, initial_centroids, max_iters, plot=False):
             ax.yaxis.label.set_color('green')
             ax.set_zlabel("BLUE")
             ax.zaxis.label.set_color('blue')
-            print(centroids.shape)
+
             for ci, color in enumerate(colors):
                 data_tmp = X[idx == ci]
                 ax.plot(data_tmp[:, 0], data_tmp[:, 1], data_tmp[:, 2], 'o', color=color, markersize=4)
